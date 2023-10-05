@@ -52,6 +52,7 @@ public class Main {
                         switch (brandChoice) {
                             case 1: {
                                 program.buyApplePhone();
+                                System.out.println("\nYou bought an Apple cellphone.\n");
                                 program.displayCellphones();
                                 break;
                             }// end case 1 brandChoice
@@ -59,6 +60,7 @@ public class Main {
                         break;
                     }//end case2 itemChoice
                 }//end switch itemChoice
+                break;
             }// end case1 main menu
 
             case 2: {
