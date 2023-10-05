@@ -1,62 +1,72 @@
 import CellPhone.*;
 import TV.*;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
-//        //constructors
-//        Apple apple = new Apple();
-//        Samsung samsung = new Samsung();
-//        Oppo oppo = new Oppo();
-//        SamsungTv samsungTv = new SamsungTv();
-//        SonyTv sonyTv = new SonyTv();
-//        TclTv tclTv = new TclTv();
-//
-//        //create apple
-//        Assembler assemblerApple = new Assembler(apple);
-//        assemblerApple.createCellphone();
-//        Cellphone cellphoneApple = assemblerApple.getCellphone();
-//        cellphoneApple.Display();
-//        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-//
-//
-//        //create samsung
-//        Assembler assemblerSamsung = new Assembler(samsung);
-//        assemblerSamsung.createCellphone();
-//        Cellphone cellphoneSamsung = assemblerSamsung.getCellphone();
-//        cellphoneSamsung.Display();
-//        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-//
-//
-//        //create oppo
-//        Assembler assemblerOppo = new Assembler(oppo);
-//        assemblerOppo.createCellphone();
-//        Cellphone cellphoneOppo = assemblerOppo.getCellphone();
-//        cellphoneOppo.Display();
-//        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-//
-//        //create samsungtv
-//        AssemblerTv assemblerSamsungTv = new AssemblerTv(samsungTv);
-//        assemblerSamsungTv.createTv();
-//        TV tvSamsung = assemblerSamsungTv.getTv();
-//        tvSamsung.Display();
-//        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-//
-//        //create sonytv
-//        AssemblerTv assemblerSonyTv = new AssemblerTv(sonyTv);
-//        assemblerSonyTv.createTv();
-//        TV tvSony = assemblerSonyTv.getTv();
-//        tvSony.Display();
-//        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-//
-//        //create tcl
-//        AssemblerTv assemblerTclTv = new AssemblerTv(tclTv);
-//        assemblerTclTv.createTv();
-//        TV tvTcl = assemblerTclTv.getTv();
-//        tvTcl.Display();
-//        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-
         Start program = new Start();
-        program.startProgram();
-    }
-}
+        Scanner scanner = new Scanner(System.in);
+        Headers header = new Headers();
+
+
+        //main menu
+        header.supermarket(header.supermkt);
+        System.out.println("1 - Buy item");
+        System.out.println("2 - Sell item");
+        System.out.print("Insert your option: ");
+
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice) {
+            case 1: {
+                header.supermarket(header.supermkt);
+                header.supermarket(header.buy);
+                System.out.println("1 - Television");
+                System.out.println("2 - Cellphone");
+                System.out.print("Insert your option: ");
+                int itemChoice = scanner.nextInt();
+                scanner.nextLine();
+
+                switch (itemChoice) {
+                    case 1: {
+                        header.supermarket(header.supermkt);
+                        header.supermarket(header.tv);
+                        System.out.println("1 - Samsung");
+                        System.out.println("2 - Sony");
+                        System.out.println("1 - TCL");
+                        break;
+                    }//end cas1 itemChoice
+
+                    case 2: {
+                        header.supermarket(header.supermkt);
+                        header.supermarket(header.phone);
+                        System.out.println("1 - Apple");
+                        System.out.println("2 - Samsung");
+                        System.out.println("1 - Oppo");
+                        System.out.print("Insert your option: ");
+                        int brandChoice = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch (brandChoice) {
+                            case 1: {
+                                program.buyApplePhone();
+                                program.displayCellphones();
+                                break;
+                            }// end case 1 brandChoice
+                        }// end switch brandChoice
+                        break;
+                    }//end case2 itemChoice
+                }//end switch itemChoice
+            }// end case1 main menu
+
+            case 2: {
+                header.supermarket(header.supermkt);
+                header.supermarket(header.sell);
+                System.out.println("need to do");
+                break;
+            }// end case2 main menu
+        }// end switch main menu
+    }// end void main
+}// end class main

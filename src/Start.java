@@ -32,10 +32,12 @@ public class Start {
         cellphones = new ArrayList<>();
         televisions = new ArrayList<>();
     }
+
     public void buyApplePhone() {
         Cellphone applePhone = createCellphone(new Apple());
         cellphones.add(applePhone);
     }
+
     public void buySamsungPhone() {
         Cellphone samsungPhone = createCellphone(new Samsung());
         cellphones.add(samsungPhone);
@@ -61,6 +63,20 @@ public class Start {
         televisions.add(tclTv);
     }
 
+    public void displayCellphones() {
+        System.out.println("List of Cellphones:");
+        for (Cellphone cellphone : cellphones) {
+            cellphone.Display(); // Supondo que você tenha um método Display() na sua classe Cellphone
+        }
+    }
+
+    public void displayTelevisions() {
+        System.out.println("List of Televisions:");
+        for (TV television : televisions) {
+            television.Display(); // Supondo que você tenha um método Display() na sua classe TV
+        }
+
+    }
 }
 
 
