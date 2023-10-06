@@ -8,6 +8,8 @@ public class Start {
     private List<Cellphone> cellphones;
     private List<TV> televisions;
 
+
+
     //constructors
     private Apple apple = new Apple();
     private Samsung samsung = new Samsung();
@@ -15,6 +17,7 @@ public class Start {
     private SamsungTv samsungTv = new SamsungTv();
     private SonyTv sonyTv = new SonyTv();
     private TclTv tclTv = new TclTv();
+    public Tracker tracker = new Tracker();
 
     private Cellphone createCellphone(IBuilderPhone phone) {
         Assembler assembler = new Assembler(phone);
@@ -31,11 +34,14 @@ public class Start {
     public Start() {
         cellphones = new ArrayList<>();
         televisions = new ArrayList<>();
+        double totalbuy = 0;
     }
 
     public void buyApplePhone() {
         Cellphone applePhone = createCellphone(new Apple());
         cellphones.add(applePhone);
+        tracker.setTotalbuy(10);
+
     }
 
     public void buySamsungPhone() {
@@ -78,12 +84,4 @@ public class Start {
 
     }
 }
-
-
-//        for (Cellphone cellphone : cellphones) {
-//            cellphone.Display();
-//            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-//        }
-
-
 
